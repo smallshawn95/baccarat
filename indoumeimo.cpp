@@ -110,9 +110,27 @@ int main(){
         if(final_player>final_dealer) cout<<"優: <閒家>" <<final_player/final_dealer<<"倍\n";
         else if(final_player==final_dealer) cout<<"平\n";
         else cout<<"優: <莊家> "<<final_dealer/final_player<<"倍\n";
-        if(sum_player()>=7 && sum_player()>sum_dealer()) cout<<"強勢打法: 閒\n";
-        else if(sum_dealer()>=7 && sum_dealer()>sum_player()) cout<<"強勢打法: 莊\n";
+        // if(sum_player()>=7 && sum_player()>sum_dealer()) cout<<"強勢打法: 閒\n";
+        // else if(sum_dealer()>=7 && sum_dealer()>sum_player()) cout<<"強勢打法: 莊\n";
+        // else cout<<"強勢打法: 無\n";
+        if(sum_player()>sum_dealer()){
+            if(sum_player()>=7){
+                cout<<"強勢打法: 閒家";
+            }
+            else{
+                cout<<"強勢打法: 莊家";
+            }
+        }
+        else if(sum_dealer()>sum_player()){
+            if(sum_dealer()>=7){
+                cout<<"強勢打法: 莊家\n";
+            }
+            else{
+                cout<<"強勢打法: 閒家\n";
+            }
+        }
         else cout<<"強勢打法: 無\n";
+        
     }
      
 }
