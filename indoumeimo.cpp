@@ -55,28 +55,26 @@ int main(){
         }
 // ---------------------------------------------------------------------------------------
         //耞干礟   
-        while(true){
+        while(true) {
             if(sum_player()>=8 || sum_dealer()>=8) break;
             else if(sum_player()<=5){
                 cout<<"盯產干礟: ";
                 cin>>a;
                 player.push_back(a);
-                if(sum_dealer()<=2){
+                if(sum_dealer()<=3){
+                    if(a==8) break;
+                    else{
+                        cout<<"缠產干礟: ";
+                        cin>>a;
+                        dealer.push_back(a);
+                    }
+                }
+                else if(sum_dealer()==4 && a>=2 && a<=7){
                     cout<<"缠產干礟: ";
                     cin>>a;
                     dealer.push_back(a);
                 }
-                else if(sum_dealer()==3 && a!=8){
-                    cout<<"缠產干礟: ";
-                    cin>>a;
-                    dealer.push_back(a);
-                }
-                else if(sum_dealer()==4 && a!=1 && a!=0 && a<8){
-                    cout<<"缠產干礟: ";
-                    cin>>a;
-                    dealer.push_back(a);
-                }
-                else if(sum_dealer()==5 && a!=0 && a!=1 && a!=2 && a!=3 && a!=8 && a!=9){
+                else if(sum_dealer()==5 && a>=4 && a<=7){
                     cout<<"缠產干礟: ";
                     cin>>a;
                     dealer.push_back(a);
@@ -86,13 +84,8 @@ int main(){
                     cin>>a;
                     dealer.push_back(a);
                 }
-            }
-            else if(sum_dealer()<=5){
-                cout<<"缠產干礟: ";
-                cin>>a;
-                dealer.push_back(a);
-            }
-            break;
+                break;
+            }        
         }
 // -----------------------------------------------------------------------------------------------------------
         sort(player.begin(),player.end());
