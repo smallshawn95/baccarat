@@ -62,7 +62,7 @@ int main(){
                 cin>>a;
                 player.push_back(a);
                 if(sum_dealer()<=3){
-                    if(a==8) break;
+                    if(sum_player()==8) break;
                     else{
                         cout<<"莊家補牌: ";
                         cin>>a;
@@ -115,10 +115,10 @@ int main(){
         // else cout<<"強勢打法: 無\n";
         if(sum_player()>sum_dealer()){
             if(sum_player()>=7){
-                cout<<"強勢打法: 閒家";
+                cout<<"強勢打法: 閒家\n";
             }
             else{
-                cout<<"強勢打法: 莊家";
+                cout<<"強勢打法: 莊家\n";
             }
         }
         else if(sum_dealer()>sum_player()){
